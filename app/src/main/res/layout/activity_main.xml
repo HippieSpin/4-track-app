@@ -1,18 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="20dp"
     tools:context=".MainActivity">
 
+    <SeekBar
+        android:id="@+id/track1Seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/track1Title"
+        android:layout_toRightOf="@+id/track1Mute"
+        android:paddingRight="16dp"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="301dp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/track1Mute"
+        android:checkable="true"
+        android:layout_width="55dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/track1Title"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="301dp" />
+
+    <SeekBar
+        android:id="@+id/track2Seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/track2Title"
+        android:layout_toRightOf="@+id/track2Mute"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/track2Mute"
+        android:checkable="true"
+        android:layout_width="55dp"
+        android:layout_height="60dp"
+        android:layout_toLeftOf="@+id/track1Seekbar"
+        android:layout_below="@id/track2Title"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <SeekBar
+        android:id="@+id/track3Seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/track3Title"
+        android:layout_toRightOf="@+id/track3Mute"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="163dp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/track3Mute"
+        android:checkable="true"
+        android:layout_width="55dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/track3Title"
+        android:layout_toLeftOf="@+id/track1Seekbar"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="163dp" />
+
+    <SeekBar
+        android:id="@+id/track4Seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/track4Title"
+        android:layout_toRightOf="@+id/track4Mute"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/track4Mute"
+        android:checkable="true"
+        android:layout_width="55dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/track4Title"
+        android:layout_toLeftOf="@+id/track1Seekbar"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <Button
+        android:id="@+id/CompressorButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:text="Compressor"
+        android:layout_toLeftOf="@+id/space"
+        android:layout_above="@id/SavedFilesButton"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="414dp" />
+    <View
+        android:id="@+id/space"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/MasterButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Master"
+        android:layout_toRightOf="@+id/space"
+        android:layout_above="@id/SavedFilesButton"
+        tools:layout_editor_absoluteX="230dp"
+        tools:layout_editor_absoluteY="414dp" />
+
+    <Button
+        android:id="@+id/SavedFilesButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Open Saved Projects"
+        android:layout_alignParentBottom="true"
+        tools:layout_editor_absoluteX="230dp"
+        tools:layout_editor_absoluteY="414dp" />
+
     <TextView
+        android:id="@+id/track1Title"
+        android:layout_alignParentTop="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Track 1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/track2Title"
+        android:layout_below="@id/track1Seekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track 2" />
+
+    <TextView
+        android:id="@+id/track3Title"
+        android:layout_below="@id/track2Seekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track 3" />
+
+    <TextView
+        android:id="@+id/track4Title"
+        android:layout_below="@id/track3Seekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Track 4" />
+
+</RelativeLayout>

@@ -1,30 +1,30 @@
 package com.example.a4_trackapp
 
-import androidx.appcompat.app.AppCompatActivity
+//import android.support.v4.app.ActivityCompat
+//import android.support.v7.app.AppCompatActivity
 
 import android.Manifest
+import android.R
 import android.content.Context
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Bundle
-//import android.support.v4.app.ActivityCompat
-//import android.support.v7.app.AppCompatActivity
-
 import android.util.Log
 import android.view.View.OnClickListener
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import java.io.IOException
+
 
 private const val LOG_TAG = "AudioRecordTest"
 private const val REQUEST_RECORD_AUDIO_PERMISSION = 200
 
 class MainActivity : AppCompatActivity() {
 
-    private var fileName: String = ""
+    private var fileName: String = "track1"
 
     private var recordButton: RecordButton? = null
     private var recorder: MediaRecorder? = null
@@ -79,7 +79,60 @@ class MainActivity : AppCompatActivity() {
         player = null
     }
 
+/*
+    @Throws(IOException::class)
+    fun startRecord() {
+        mFile = MediaStorage.getOutgoingAudioFile()
+        setupViewForRecording(0)
+        try {
+            val recorder: MediaRecorder = mData.getRecorder()
+            recorder.setAudioSource(MediaRecorder.AudioSource.MIC)
+            recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
+            recorder.setOutputFile(mFile.getAbsolutePath())
+            recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
+            // start recording
+            mData.startRecording()
+            mStatus = STATUS_RECORDING
+        } catch (e: IllegalStateException) {
+            Log.e(TAG, "error starting audio recording", e)
+        } catch (e: IOException) {
+            Log.e(TAG, "error writing on external storage", e)
+            cancel()
+            Builder(getContext()).content(R.string.err_audio_record_writing)
+                .positiveText(R.string.ok).show()
+        } catch (e: RuntimeException) {
+            Log.e(TAG, "error starting audio recording", e)
+            cancel()
+            Builder(getContext()).content(R.string.err_audio_record)
+                .positiveText(R.string.ok).show()
+        }
+    }
+*/
+private fun startRecording() {
+    //private var mFile = MediaStorage.getOutgoingAudioFile()
+
+    recorder = MediaRecorder().apply {
+        setAudioSource(MediaRecorder.AudioSource.MIC)
+        setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
+        setOutputFile(fileName)
+        setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB)
+
+        try {
+            prepare()
+        } catch (e: IOException) {
+            Log.e(LOG_TAG, "prepare() failed")
+        }
+
+        start()
+    }
+
+
+}
+
+    /*
     private fun startRecording() {
+
+
         recorder = MediaRecorder().apply {
             setAudioSource(MediaRecorder.AudioSource.MIC)
             setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
@@ -94,8 +147,10 @@ class MainActivity : AppCompatActivity() {
 
             start()
         }
-    }
 
+
+    }
+*/
     private fun stopRecording() {
         recorder?.apply {
             stop()
@@ -142,6 +197,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(icicle: Bundle?) {
         super.onCreate(icicle)
+        setContentView(R.layout.activity_main);
 
         // Record to the external cache directory for visibility
         //fileName = "${externalCacheDir.absolutePath}/audiorecordtest.3gp"
@@ -165,7 +221,9 @@ class MainActivity : AppCompatActivity() {
                     ViewGroup.LayoutParams.WRAP_CONTENT,
                     0f))
         }
-        setContentView(ll)
+        //setContentView(ll)
+
+
     }
 
     override fun onStop() {

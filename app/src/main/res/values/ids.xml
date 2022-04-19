@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="track1Seekbar" type="id" />
+    <item name="track1Title" type="id" />
+    <item name="track1Mute" type="id" />
+    <item name="track2Seekbar" type="id" />
+    <item name="track2Title" type="id" />
+    <item name="track2Mute" type="id" />
+    <item name="track3Seekbar" type="id" />
+    <item name="track3Title" type="id" />
+    <item name="track3Mute" type="id" />
+    <item name="track4Seekbar" type="id" />
+    <item name="track4Title" type="id" />
+    <item name="track4Mute" type="id" />
+    <item name="CompressorButton" type="id" />
+    <item name="space" type="id" />
+    <item name="SavedFilesButton" type="id" />
+    <item name="MasterButton" type="id" />
+</resources>
