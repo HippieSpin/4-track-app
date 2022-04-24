@@ -7,7 +7,6 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
 import android.os.Bundle
-import android.widget.Button
 import androidx.core.app.ActivityCompat
 import com.example.a4_trackapp.databinding.ActivityMainBinding
 import java.io.IOException
@@ -40,6 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         if(!permissionGranted)
             ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE)
+
+        binding.MasterButton.setOnClickListener {
+            setContentView(R.layout.activity_master)
+        }
     }
 
     override fun onRequestPermissionsResult(
@@ -52,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         if(requestCode == REQUEST_CODE)
             permissionGranted = grantResults[0] == PackageManager.PERMISSION_GRANTED
 
-        binding.imageButton.setOnClickListener{
+        binding.track1Seekbar.setOnClickListener{
             when {
                 isPaused -> resumeRecording()
                 isRecording -> pauseRecording()
@@ -64,13 +67,11 @@ class MainActivity : AppCompatActivity() {
     private fun pauseRecording() {
         recorder.pause()
         isPaused = true
-        binding.imageButton.setImageResource(R.drawable.ic_record)
     }
 
     private fun resumeRecording() {
         recorder.resume()
         isPaused = false
-        binding.imageButton.setImageResource(R.drawable.ic_pause)
     }
 
     private fun startRecording() {
@@ -98,10 +99,10 @@ class MainActivity : AppCompatActivity() {
             start()
         }
 
-        binding.imageButton.setImageResource(R.drawable.ic_pause)
         isRecording = true
         isPaused = false
     }
+
 
 }
 

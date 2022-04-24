@@ -22,10 +22,10 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/track1Mute"
-        android:checkable="true"
         android:layout_width="55dp"
         android:layout_height="60dp"
         android:layout_below="@id/track1Title"
+        android:checkable="true"
         tools:layout_editor_absoluteX="36dp"
         tools:layout_editor_absoluteY="301dp" />
 
@@ -78,11 +78,11 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/track4Mute"
-        android:checkable="true"
         android:layout_width="55dp"
         android:layout_height="60dp"
         android:layout_below="@id/track4Title"
         android:layout_toLeftOf="@+id/track1Seekbar"
+        android:checkable="true"
         tools:layout_editor_absoluteX="36dp"
         tools:layout_editor_absoluteY="94dp" />
 
@@ -90,11 +90,11 @@
         android:id="@+id/CompressorButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_above="@id/SavedFilesButton"
+        android:layout_toLeftOf="@+id/space"
         android:paddingLeft="2dp"
         android:paddingRight="2dp"
         android:text="Compressor"
-        android:layout_toLeftOf="@+id/space"
-        android:layout_above="@id/SavedFilesButton"
         tools:layout_editor_absoluteX="36dp"
         tools:layout_editor_absoluteY="414dp" />
     <View
@@ -118,8 +118,8 @@
         android:id="@+id/SavedFilesButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Open Saved Projects"
         android:layout_alignParentBottom="true"
+        android:text="Open Saved Projects"
         tools:layout_editor_absoluteX="230dp"
         tools:layout_editor_absoluteY="414dp" />
 

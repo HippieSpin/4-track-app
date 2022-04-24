@@ -3,11 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Aaron/AndroidStudioProjects/4TrackApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Aaron/AndroidStudioProjects/4TrackApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/drawable/ic_pause.xml" value="0.156" />
         <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/drawable/ic_record.xml" value="0.3035" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.19477911646586346" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout-w1240dp/activity_main2.xml" value="0.19477911646586346" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout-w1240dp/app_bar_main.xml" value="0.19477911646586346" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout-w1240dp/content_main.xml" value="0.19477911646586346" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout-w600dp/app_bar_main.xml" value="0.2566137566137566" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout-w600dp/content_main.xml" value="0.2566137566137566" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/activity_login.xml" value="0.303125" />
         <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/activity_main2.xml" value="0.303125" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/app_bar_main.xml" value="0.303125" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/content_main.xml" value="0.303125" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/fragment_reflow.xml" value="0.303125" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/fragment_settings.xml" value="0.303125" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/fragment_slideshow.xml" value="0.303125" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/nav_header_main.xml" value="0.303125" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/saved_projects.xml" value="0.3" />
+        <entry key="..\:/Users/jbell/4-track-app/app/src/main/res/layout/track_layout.xml" value="0.303125" />
       </map>
     </option>
   </component>
