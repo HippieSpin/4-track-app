@@ -4,11 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="20dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:paddingBottom="20dp"
     tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topToolbar"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <TextView
+            android:id="@+id/topToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="4-Track App"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+    </androidx.appcompat.widget.Toolbar>
 
     <SeekBar
         android:id="@+id/track1Seekbar"
@@ -40,11 +56,12 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/track2Mute"
-        android:checkable="true"
         android:layout_width="55dp"
         android:layout_height="60dp"
-        android:layout_toLeftOf="@+id/track1Seekbar"
         android:layout_below="@id/track2Title"
+        android:layout_toLeftOf="@+id/track1Seekbar"
+        android:checkable="true"
+        android:paddingLeft="20dp"
         tools:layout_editor_absoluteX="36dp"
         tools:layout_editor_absoluteY="230dp" />
 
@@ -59,11 +76,12 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/track3Mute"
-        android:checkable="true"
         android:layout_width="55dp"
         android:layout_height="60dp"
         android:layout_below="@id/track3Title"
         android:layout_toLeftOf="@+id/track1Seekbar"
+        android:checkable="true"
+        android:paddingLeft="20dp"
         tools:layout_editor_absoluteX="36dp"
         tools:layout_editor_absoluteY="163dp" />
 
@@ -83,6 +101,7 @@
         android:layout_below="@id/track4Title"
         android:layout_toLeftOf="@+id/track1Seekbar"
         android:checkable="true"
+        android:paddingLeft="20dp"
         tools:layout_editor_absoluteX="36dp"
         tools:layout_editor_absoluteY="94dp" />
 
@@ -125,13 +144,17 @@
 
     <TextView
         android:id="@+id/track1Title"
-        android:layout_alignParentTop="true"
+        android:paddingLeft="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/topToolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Track 1" />
 
     <TextView
         android:id="@+id/track2Title"
+        android:paddingLeft="20dp"
+        android:textSize="20sp"
         android:layout_below="@id/track1Seekbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -139,6 +162,8 @@
 
     <TextView
         android:id="@+id/track3Title"
+        android:paddingLeft="20dp"
+        android:textSize="20sp"
         android:layout_below="@id/track2Seekbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -146,6 +171,8 @@
 
     <TextView
         android:id="@+id/track4Title"
+        android:paddingLeft="20dp"
+        android:textSize="20sp"
         android:layout_below="@id/track3Seekbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

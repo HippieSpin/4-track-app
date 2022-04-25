@@ -1,11 +1,13 @@
 package com.example.a4_trackapp
 
+import android.R
+import android.media.MediaRecorder
 import android.os.Bundle
 import android.os.PersistableBundle
-
+import android.view.View
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a4_trackapp.databinding.ActivityMasterBinding
-import android.media.MediaRecorder
 
 
 class MasterActivity : AppCompatActivity() {
@@ -23,6 +25,7 @@ class MasterActivity : AppCompatActivity() {
             timer()
         }
     }
+
 
     private fun timer() {
         binding.waveformView.addAmplitude(recorder.maxAmplitude.toFloat())
