@@ -1,13 +1,11 @@
 package com.example.a4_trackapp
 
+import android.R
+import android.media.MediaRecorder
 import android.os.Bundle
 import android.os.PersistableBundle
-
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a4_trackapp.databinding.ActivityMasterBinding
-import android.media.MediaRecorder
-import android.view.View
-import android.widget.Button
 
 
 class MasterActivity : AppCompatActivity(), Timer.TimerListener {
