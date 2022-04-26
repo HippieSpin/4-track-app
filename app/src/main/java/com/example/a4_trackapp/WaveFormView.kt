@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
+import java.lang.Math.*
 
 
 class WaveFormView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
@@ -27,26 +28,27 @@ class WaveFormView(context: Context?, attrs: AttributeSet?) : View(context, attr
         maxRectangle = (screenwidth / (w+d)).toInt()
     }
 
-    override fun draw(canvas: Canvas?) {
-        super.draw(canvas)
-
-        rect.forEach {
-            canvas?.drawRoundRect(it,radius,radius,paint)
-        }
-    }
 
     fun addAmplitude(amp: Float) {
-        var amps = amplitudes.takeLast(maxRectangle)
-        amplitudes.add(amp)
+        var norm = (amp.toInt() / 7).coerceAtMost(400).toFloat()
+        amplitudes.add(norm)
 
         rect.clear()
-        for(i in amplitudes.indices) {
+        var amps = amplitudes.takeLast(maxRectangle)
+        for(i in amps.indices) {
             var left = screenwidth - i*(w+d)
             var top  = 0f
             var right = left + w
-            var bottom = amplitudes[i]
+            var bottom = amps[i]
             rect.add(RectF(left, top, right, bottom))
         }
         invalidate()
+    }
+
+    override fun draw(canvas: Canvas?) {
+        super.draw(canvas)
+        rect.forEach {
+            canvas?.drawRoundRect(it,radius,radius,paint)
+        }
     }
 }

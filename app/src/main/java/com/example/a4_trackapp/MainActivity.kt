@@ -7,6 +7,8 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.media.MediaRecorder
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.core.app.ActivityCompat
 import com.example.a4_trackapp.databinding.ActivityMainBinding
 import java.io.IOException
@@ -18,7 +20,6 @@ const val REQUEST_CODE = 200
 
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
 
     private var permissions = arrayOf(Manifest.permission.RECORD_AUDIO)
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         permissionGranted = ActivityCompat.checkSelfPermission(this, permissions[0]) == PackageManager.PERMISSION_GRANTED
 
         if(!permissionGranted)
@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
         if(requestCode == REQUEST_CODE)
             permissionGranted = grantResults[0] == PackageManager.PERMISSION_GRANTED
 
@@ -102,7 +101,6 @@ class MainActivity : AppCompatActivity() {
         isRecording = true
         isPaused = false
     }
-
 
 }
 
